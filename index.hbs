@@ -12,6 +12,8 @@ into the {body} of the default.hbs template --}}
   {{> header background=@site.cover_image}}
   {{!-- Inject styles of the hero image to make it responsive --}}
   {{> hero background=@site.cover_image}}
+  <!--
+  * Suppression du contenu texte du Header du Site
   <div class="m-hero__content" data-aos="fade-down">
     <h1 class="m-hero-title bigger">{{@site.title}}</h1>
     {{#if @site.description}}
@@ -20,9 +22,9 @@ into the {body} of the default.hbs template --}}
     {{#if @labs.subscribers}}
     <a href="{{@site.url}}/subscribe" class="m-button filled">{{t "Subscribe"}}</a>
     {{/if}}
-  </div>
+    -->
   </section>
-  
+
   <main>
     <div class="l-content">
       <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
@@ -40,11 +42,14 @@ into the {body} of the default.hbs template --}}
                     {{/if}}
                     <div class="m-featured-article__picture">
                       {{#if feature_image}}
-                      <div class="lozad no-fade-animation" data-background-image="{{img_url feature_image size="l"}}"></div>
+                      <div class="lozad no-fade-animation" data-background-image="{{img_url feature_image size="l"}}">
+                      </div>
                       {{/if}}
                     </div>
                     <div class="m-featured-article__meta">
-                      <a href="{{primary_author.url}}" class="m-featured-article__author js-tooltip" aria-label="Authors" data-tippy-content="{{t "Posted by"}} {{primary_author.name}} {{authors autolink="false" from="2" prefix=(t "Among with") separator=" , "}}">
+                      <a href="{{primary_author.url}}" class="m-featured-article__author js-tooltip"
+                        aria-label="Authors"
+                        data-tippy-content="{{t "Posted by"}} {{primary_author.name}} {{authors autolink="false" from="2" prefix=(t "Among with") separator=" , "}}">
                         {{#if primary_author.profile_image}}
                         <div style="background-image: url({{img_url primary_author.profile_image size="xs"}});"></div>
                         {{else}}
@@ -88,5 +93,5 @@ into the {body} of the default.hbs template --}}
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
-  <script defer src="{{asset "js/home.js"}}"></script>
+<script defer src="{{asset "js/home.js"}}"></script>
 {{/contentFor}}
