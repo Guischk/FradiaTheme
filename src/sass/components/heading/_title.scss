@@ -11,6 +11,10 @@
     margin-bottom: 15px;
   }
 
+  &.featured {
+    z-index: 1;
+  }
+
   &.in-post {
     letter-spacing: 0.5px;
     font-size: 2rem;
