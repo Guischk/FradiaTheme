@@ -5,11 +5,16 @@
   overflow: hidden;
   padding: 100px 0 75px;
   background-color: var(--secondary-subtle-color);
+
+  //modification de margin pour le menu
+  margin-top: 50px;
+
   @extend .content-centered;
 
   @include respond-to('medium') {
     min-height: 400px;
     padding: 150px 0 75px;
+    margin-top: 65px;
   }
 
   &.with-picture {
